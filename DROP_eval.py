@@ -1,5 +1,8 @@
 #!/usr/bin/python
 '''
+From (Geva et al., 2020)
+'''
+'''
 Official DROP eval script from https://github.com/allenai/allennlp/blob/master/allennlp/tools/drop_eval.py 
 (with added support for .jsonl prediction files).
 '''

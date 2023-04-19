@@ -10,8 +10,13 @@ from metrics import macro_F1_magnitued, macro_F1_task, calc_MAE
 import utils
 from Model import NumT5
 
+# Device
+gpu_device = torch.device("cuda")
+cpu_device = torch.device("cpu")
+device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+print("Running on", device)
 
-def make_prediction(model,data_examples,tokenizer,num_tokenizer,h_params,device):
+def make_prediction(model,data_examples,tokenizer,num_tokenizer,h_params):
     y_hat = []
     graound_truth = []
     model.eval()
@@ -100,12 +105,12 @@ def make_prediction(model,data_examples,tokenizer,num_tokenizer,h_params,device)
     
     return y_hat,graound_truth
 
-def Evaluate(model_path,data_path,tokenizer,num_tokenizer,hyperparams,device):
+def Evaluate(model_path,data_path,tokenizer,num_tokenizer,hyperparams):
     test_set = vanilla_dataset(data_path,hyperparams['prefix'])
     fine_tuned =  NumT5(hyperparams['model_name'],hyperparams)
     fine_tuned.to(device)
     fine_tuned.load_state_dict(torch.load(model_path))
-    preds,truths = make_prediction(fine_tuned,test_set,tokenizer,num_tokenizer,hyperparams,device)
+    preds,truths = make_prediction(fine_tuned,test_set,tokenizer,num_tokenizer,hyperparams)
     
     for i in range(len(preds)):
         if not utils.is_num(preds[i]):

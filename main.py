@@ -1,11 +1,6 @@
 ## Import packages ##
 # python
 import argparse
-import wandb  ## move to trianer
-import os
-os.environ["WANDB_API_KEY"]="53f31c6742a692365d1efe5d618d1ca8629219bc"
-os.environ["WANDB_ENTITY"]="zena-k"
-os.environ["WANDB_PROJECT"]="Smart"
 
 # hugging face
 import transformers
@@ -22,20 +17,14 @@ torch.manual_seed(rnd_state)
 torch.cuda.manual_seed_all(rnd_state)
 
 
-# Device
-gpu_device = torch.device("cuda")
-cpu_device = torch.device("cpu")
-device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-print("Running on", device)
 
-def train(model_name, train_file, dev_file, hyperparameters, tokenizer, num_tokenizer, device, wandb):
+def train(model_name, train_file, dev_file, hyperparameters, tokenizer, num_tokenizer):
     # Trainer 
     t5_trainer = Trainer(model_name, train_file, dev_file, hyperparameters)
-    wandb.init(project= os.environ["WANDB_PROJECT"] , entity=os.environ["WANDB_ENTITY"],config=hyperparameters)
-    t5_trainer.Train(tokenizer,num_tokenizer,wandb,device)
+    t5_trainer.Train(tokenizer,num_tokenizer)
 
-def predict(model_path,data_path,tokenizer,num_tokenizer,hyperparams,device):
-    preds,truths, mag_f1, MAE, task_f1 = Evaluate(model_path,data_path,tokenizer,num_tokenizer,hyperparams,device)
+def predict(model_path,data_path,tokenizer,num_tokenizer,hyperparams):
+    preds,truths, mag_f1, MAE, task_f1 = Evaluate(model_path,data_path,tokenizer,num_tokenizer,hyperparams)
     print('======================================')
     print(f'Magnitude macro F1: {mag_f1}') 
     print(f'MAE: {MAE}')
@@ -112,9 +101,9 @@ hyperparams = {
 t5_tokenizer, Num_t5_tokenizer = get_tokenizer(hyperparams)
 
 if args.train:
-    train(args.model_name, args.train_file, args.dev_file, hyperparams, t5_tokenizer,Num_t5_tokenizer, device, wandb)
+    train(args.model_name, args.train_file, args.dev_file, hyperparams, t5_tokenizer,Num_t5_tokenizer)
 elif args.predict:
-    predict(args.out_model_path, args.test_file, t5_tokenizer, Num_t5_tokenizer, hyperparams, device)
+    predict(args.out_model_path, args.test_file, t5_tokenizer, Num_t5_tokenizer, hyperparams)
 
 
 

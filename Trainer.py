@@ -13,6 +13,19 @@ from Num_dataLoader import Num_context_collate
 from Mixed_dataLoader import Mixed_context_collate
 from Model import NumT5
 
+import wandb  ## move to trianer
+import os
+os.environ["WANDB_API_KEY"]="53f31c6742a692365d1efe5d618d1ca8629219bc"
+os.environ["WANDB_ENTITY"]="zena-k"
+os.environ["WANDB_PROJECT"]="Smart"
+
+# Device
+gpu_device = torch.device("cuda")
+cpu_device = torch.device("cpu")
+device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+print("Running on", device)
+
+
 
 
 class Trainer():
@@ -45,7 +58,7 @@ class Trainer():
         
         return train_dataloader, dev_dataloader
     
-    def calc_loss(self,model,batch,tokenizer,device):
+    def calc_loss(self,model,batch,tokenizer):
         if self.hyperparams['is_embed']:
             if model.head == 'reg':
                 questions, atten, quest_num_values, ques_num_masks, answers, ans_num_values, ans_num_masks = batch
@@ -110,7 +123,7 @@ class Trainer():
         return loss
             
 
-    def train_loop(self,model,dataloader,tokenizer,num_tokenizer,wandb,device,epoch):
+    def train_loop(self,model,dataloader,tokenizer,num_tokenizer,wandb,epoch):
         model.train()
         total_loss = 0
         for batch in dataloader:
@@ -118,7 +131,7 @@ class Trainer():
             # model.zero_grad()
             self.optim.zero_grad()
             # loss
-            loss = self.calc_loss(model,batch,tokenizer,device)
+            loss = self.calc_loss(model,batch,tokenizer)
             # backward 
             loss.backward()
             # clip gradient
@@ -130,27 +143,28 @@ class Trainer():
         print('Epoch: {} - Train Loss: {:.6f}'.format(epoch, total_loss))
         wandb.log({"train_loss": total_loss},step=epoch)
 
-    def test_loop(self,model,dataloader,tokenizer,num_tokenizer,wandb,device,epoch):
+    def test_loop(self,model,dataloader,tokenizer,num_tokenizer,wandb,epoch):
         model.eval()
         total_loss = 0
         with torch.no_grad():
             for batch in dataloader:
                 batch = tuple(t.to(device) for t in batch)
-                loss = self.calc_loss(model,batch,tokenizer,device)
+                loss = self.calc_loss(model,batch,tokenizer)
                 total_loss += loss.item()
             print('Evaluation Loss: {:.6f}'.format(total_loss))
             wandb.log({"val_loss": total_loss},step=epoch)
         return total_loss
 
-    def Train(self,tokenizer,num_tokenizer,wandb,device):
+    def Train(self,tokenizer,num_tokenizer):
         # loaders & Model
         train_dataloader , dev_dataloader = self.get_loaders(tokenizer,num_tokenizer,self.hyperparams)
         self.t5_model = self.t5_model.to(device)
         print('Start training...')
+        wandb.init(project= os.environ["WANDB_PROJECT"] , entity=os.environ["WANDB_ENTITY"],config=self.hyperparams)
         best_val_loss = math.inf
         for epoch in range(self.hyperparams['Epochs'] +1 ):
-            self.train_loop(self.t5_model,train_dataloader,tokenizer,num_tokenizer,wandb,device,epoch)
-            val_loss = self.test_loop(self.t5_model,dev_dataloader,tokenizer,num_tokenizer,wandb,device,epoch)
+            self.train_loop(self.t5_model,train_dataloader,tokenizer,num_tokenizer,wandb,epoch)
+            val_loss = self.test_loop(self.t5_model,dev_dataloader,tokenizer,num_tokenizer,wandb,epoch)
             # scheduler.step(val_loss)
             if val_loss < best_val_loss:
                 best_val_loss = val_loss
