@@ -13,11 +13,7 @@ from Num_dataLoader import Num_context_collate
 from Mixed_dataLoader import Mixed_context_collate
 from Model import NumT5
 
-import wandb  ## move to trianer
-import os
-os.environ["WANDB_API_KEY"]="53f31c6742a692365d1efe5d618d1ca8629219bc"
-os.environ["WANDB_ENTITY"]="zena-k"
-os.environ["WANDB_PROJECT"]="Smart"
+
 
 # Device
 gpu_device = torch.device("cuda")
