@@ -33,7 +33,5 @@ if __name__ == "__main__":
 
     args = argParser.parse_args()
     train_set = vanilla_dataset(args.data_file,args.prefix)
-    q,a = train_set[[10]]
-    ann = []
-    ann.append(a)
-    print(float(ann[0]))
+ 
+  

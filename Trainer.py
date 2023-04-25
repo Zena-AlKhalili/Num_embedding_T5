@@ -13,7 +13,9 @@ from Model import NumT5
 
 import wandb  
 import os
-
+os.environ["WANDB_API_KEY"]="53f31c6742a692365d1efe5d618d1ca8629219bc"
+os.environ["WANDB_ENTITY"]="zena-k"
+os.environ["WANDB_PROJECT"]="Smart"
 
 # Device
 gpu_device = torch.device("cuda")
@@ -28,7 +30,8 @@ class Trainer():
         self.train_set = vanilla_dataset(train_file,self.hyperparams['prefix'])
         self.dev_set = vanilla_dataset(dev_file,self.hyperparams['prefix'])
         self.t5_model = NumT5(model_name,self.hyperparams)
-        self.optim = torch.optim.Adam(self.t5_model.parameters(), lr= self.hyperparams['lr'])
+        self.optim = torch.optim.AdamW(self.t5_model.parameters(), lr=self.hyperparams['lr']
+                                       ,weight_decay=self.hyperparams['weight_decay_co'])
         self.loss_function = nn.L1Loss()
         self.is_shuffle = True
         # fix seed for reproduceability

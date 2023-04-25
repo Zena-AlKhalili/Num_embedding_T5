@@ -66,7 +66,8 @@ argParser.add_argument("-Eem","--exp_embed", type= bool, default= False ,help='t
 argParser.add_argument("-exp","--num_exp",type=int, default=5, help = 'number of exponents for exp embeddings')
 argParser.add_argument("-Vem","--value_embed", type= bool, default= True ,help='to value embed or not')
 argParser.add_argument("-voc","--vocab_file", default= 'spiece.model' ,help='to value embed or not')
-argParser.add_argument("-s","--seed",type= int, default= '20' ,help='seed for reproducability')
+argParser.add_argument("-s","--seed",type= int, default= 20 ,help='seed for reproducability')
+argParser.add_argument("-wd","--weight_decay_coeff",type= float, default= 0.02 ,help='coefficient for weight decay of optimizer')
 
 args = argParser.parse_args()
 
@@ -76,6 +77,7 @@ hyperparams = {
     'lr': args.learning_rate,
     'clip_value': args.clip_value,
     'dropout_rate' : args.dropout_rate,
+    'weight_decay_co':args.weight_decay_coeff,
     'alpha' : args.alpha,
     'batch_size' : args.batch_size,
     'Epochs': args.epochs_number,
