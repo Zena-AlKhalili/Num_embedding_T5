@@ -1,9 +1,9 @@
 # torch
 import torch
 # fix seed for reproduceability
-rnd_state = 42
-torch.manual_seed(rnd_state)
-torch.cuda.manual_seed_all(rnd_state)
+# rnd_state = 42
+# torch.manual_seed(rnd_state)
+# torch.cuda.manual_seed_all(rnd_state)
 from torch.utils.data import Dataset
 import pandas as pd
 import utils

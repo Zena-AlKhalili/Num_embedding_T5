@@ -2,10 +2,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-# fix seed for reproduceability
-rnd_state = 42
-torch.manual_seed(rnd_state)
-torch.cuda.manual_seed_all(rnd_state)
 import torch.nn as nn
 import transformers
 
@@ -127,21 +123,19 @@ class NumT5(nn.Module):
     
     def forward(self,ques_ids,ans_ids,attens=None,num_values= None, num_masks=None,ans_num_values=None, ans_num_masks=None):
         if self.is_embed:
+            quest_embeds = self.numerical_embedder(ques_ids,num_values,num_masks)
             if self.head == 'reg':
-                quest_embeds = self.numerical_embedder(ques_ids,num_values,num_masks)
                 ans_embeds = self.numerical_embedder(ans_ids,ans_num_values,ans_num_masks)
                 out = self.model(inputs_embeds=quest_embeds, decoder_inputs_embeds=ans_embeds)
                 output = self.regressor(out.last_hidden_state)
                 return output
             elif self.head == 'all':
-                quest_embeds = self.numerical_embedder(ques_ids,num_values,num_masks)
                 ans_embeds = self.numerical_embedder(ans_ids,ans_num_values,ans_num_masks)
                 lm_out = self.model(inputs_embeds=quest_embeds, decoder_inputs_embeds=ans_embeds,
                                     labels=ans_ids, output_hidden_states=True)
                 reg_out = self.regressor(lm_out.decoder_hidden_states[-1])
                 return reg_out, lm_out
             else:
-                quest_embeds = self.numerical_embedder(ques_ids,num_values,num_masks)
                 out = self.model(inputs_embeds=quest_embeds, labels=ans_ids)
                 return out
         else:

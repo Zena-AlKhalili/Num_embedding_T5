@@ -1,9 +1,9 @@
 # torch
 import torch
 # fix seed for reproduceability
-rnd_state = 42
-torch.manual_seed(rnd_state)
-torch.cuda.manual_seed_all(rnd_state)
+# rnd_state = 42
+# torch.manual_seed(rnd_state)
+# torch.cuda.manual_seed_all(rnd_state)
 import numpy as np
 # DROP 
 from DROP_eval import get_metrics

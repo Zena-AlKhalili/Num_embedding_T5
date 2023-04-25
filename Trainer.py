@@ -1,18 +1,18 @@
+import numpy as np
 # torch
 import torch
-# fix seed for reproduceability
-rnd_state = 42
-torch.manual_seed(rnd_state)
-torch.cuda.manual_seed_all(rnd_state)
 import torch.nn as nn
 from torch.utils.data import DataLoader
 import math
+# customized
 from Vanilla_dataset import vanilla_dataset
 from Vanilla_dataLoader import Collate_Context
 from Num_dataLoader import Num_context_collate
 from Mixed_dataLoader import Mixed_context_collate
 from Model import NumT5
 
+import wandb  
+import os
 
 
 # Device
@@ -20,8 +20,6 @@ gpu_device = torch.device("cuda")
 cpu_device = torch.device("cpu")
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 print("Running on", device)
-
-
 
 
 class Trainer():
@@ -33,6 +31,12 @@ class Trainer():
         self.optim = torch.optim.Adam(self.t5_model.parameters(), lr= self.hyperparams['lr'])
         self.loss_function = nn.L1Loss()
         self.is_shuffle = True
+        # fix seed for reproduceability
+        rnd_state = hyperparameters['seed']
+        torch.manual_seed(rnd_state)
+        torch.cuda.manual_seed_all(rnd_state)
+        np.random.seed(rnd_state)
+
     
     def get_loaders(self,tokenizer,num_tokenizer,hypers):
         if hypers['is_embed']:
@@ -81,7 +85,7 @@ class Trainer():
                             num_values=quest_num_values, num_masks=ques_num_masks,
                             ans_num_values=ans_num_values, ans_num_masks=ans_num_masks)
                 # both losses
-                reg_loss = self.loss_function(reg_out.squeeze()[:, 0],ans_num_values[:,1:].contiguous().view(-1))
+                reg_loss = self.loss_function(reg_out.squeeze()[:, 0], ans_num_values[:,1:].contiguous().view(-1))
                 loss = torch.add(reg_loss, lm_out.loss, alpha=self.hyperparams['alpha'])
 
             else:

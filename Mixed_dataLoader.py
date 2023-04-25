@@ -1,7 +1,7 @@
 import torch
-rnd_state = 42
-torch.manual_seed(rnd_state)
-torch.cuda.manual_seed_all(rnd_state)
+# rnd_state = 42
+# torch.manual_seed(rnd_state)
+# torch.cuda.manual_seed_all(rnd_state)
 
 # collate: pad to make all samples in batch with same length
 def Mixed_context_collate(tokenizer,num_tokenizer):

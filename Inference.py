@@ -1,9 +1,9 @@
 # torch
 import torch
 # fix seed for reproduceability
-rnd_state = 42
-torch.manual_seed(rnd_state)
-torch.cuda.manual_seed_all(rnd_state)
+# rnd_state = 42
+# torch.manual_seed(rnd_state)
+# torch.cuda.manual_seed_all(rnd_state)
 
 from Vanilla_dataset import vanilla_dataset
 from metrics import macro_F1_magnitued, macro_F1_task, calc_MAE

@@ -11,12 +11,6 @@ from T5NumericalTokenizer import T5NumericalTokenizer
 
 # torch
 import torch
-# fix seed for reproduceability
-rnd_state = 42
-torch.manual_seed(rnd_state)
-torch.cuda.manual_seed_all(rnd_state)
-
-
 
 def train(model_name, train_file, dev_file, hyperparameters, tokenizer, num_tokenizer):
     # Trainer 
@@ -72,11 +66,13 @@ argParser.add_argument("-Eem","--exp_embed", type= bool, default= False ,help='t
 argParser.add_argument("-exp","--num_exp",type=int, default=5, help = 'number of exponents for exp embeddings')
 argParser.add_argument("-Vem","--value_embed", type= bool, default= True ,help='to value embed or not')
 argParser.add_argument("-voc","--vocab_file", default= 'spiece.model' ,help='to value embed or not')
+argParser.add_argument("-s","--seed",type= int, default= '20' ,help='seed for reproducability')
 
 args = argParser.parse_args()
 
 # Hyperparams
 hyperparams = {
+    'seed': args.seed,
     'lr': args.learning_rate,
     'clip_value': args.clip_value,
     'dropout_rate' : args.dropout_rate,
@@ -96,6 +92,11 @@ hyperparams = {
     'output_model_name': args.output_model_name,
     'vocab_file': args.vocab_file
 }
+
+# fix seed for reproduceability
+rnd_state = hyperparams['seed']
+torch.manual_seed(rnd_state)
+torch.cuda.manual_seed_all(rnd_state)
 
 # tokenizer
 t5_tokenizer, Num_t5_tokenizer = get_tokenizer(hyperparams)
