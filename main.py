@@ -49,6 +49,7 @@ argParser.add_argument("-p","--prefix", default= 'question: ', help="prefix to b
 argParser.add_argument("-b","--batch_size", type=int,default= 64, help="size of batch")
 argParser.add_argument("-m","--model_name", help="name of model for tokenizer and model training")
 argParser.add_argument("-ht","--head_type", type=str, help="type of head to be added on top of t5 model options: lm, reg, all")
+argParser.add_argument("-lr","--learning_rate", type=float, default= 0.001, help="learning rate for optim")
 argParser.add_argument("-lr_step","--lr_decay_step", type=int, default= 100, help="step size for decaying learning rate using step schedular")
 argParser.add_argument('-c',"--clip_value", type=int, default= 1, help= "gradient clip value")
 argParser.add_argument("-e","--epochs_number", type=int, default=100, help="number of training epochs")
