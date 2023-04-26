@@ -1,9 +1,10 @@
+import math
 import numpy as np
 # torch
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
-import math
+from torch.optim.lr_scheduler import StepLR
 # customized
 from Vanilla_dataset import vanilla_dataset
 from Vanilla_dataLoader import Collate_Context
@@ -13,9 +14,7 @@ from Model import NumT5
 
 import wandb  
 import os
-os.environ["WANDB_API_KEY"]="53f31c6742a692365d1efe5d618d1ca8629219bc"
-os.environ["WANDB_ENTITY"]="zena-k"
-os.environ["WANDB_PROJECT"]="Smart"
+
 
 # Device
 gpu_device = torch.device("cuda")
@@ -32,6 +31,9 @@ class Trainer():
         self.t5_model = NumT5(model_name,self.hyperparams)
         self.optim = torch.optim.AdamW(self.t5_model.parameters(), lr=self.hyperparams['lr']
                                        ,weight_decay=self.hyperparams['weight_decay_co'])
+        self.schedular = StepLR(self.optim, step_size = self.hyperparams['lr_decay_step'], # Period of learning rate decay
+                                gamma = 0.5, # Multiplicative factor of learning rate decay
+                                verbose=True)
         self.loss_function = nn.L1Loss()
         self.is_shuffle = True
         # fix seed for reproduceability
@@ -168,20 +170,10 @@ class Trainer():
         for epoch in range(self.hyperparams['Epochs'] +1 ):
             self.train_loop(self.t5_model,train_dataloader,tokenizer,num_tokenizer,wandb,epoch)
             val_loss = self.test_loop(self.t5_model,dev_dataloader,tokenizer,num_tokenizer,wandb,epoch)
-            # scheduler.step(val_loss)
+            self.schedular.step()
             if val_loss < best_val_loss:
                 best_val_loss = val_loss
                 #torch.save(self.t5_model,self.hyperparams['output_model_name'])
                 torch.save(self.t5_model.state_dict(), self.hyperparams['output_model_name'])
         print('Finished training !')
 
-
- # for batch in train_dataloader:
-        #     questions, atten, quest_num_values, ques_num_masks, answers, ans_num_values, ans_num_masks = batch
-        #     print(questions[1])
-        #     print(quest_num_values[1])
-        #     print(ques_num_masks[1])
-        #     print(answers[1])
-        #     print(ans_num_values[1])
-        #     print(ans_num_masks[1])
-        #     break;

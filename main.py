@@ -49,7 +49,7 @@ argParser.add_argument("-p","--prefix", default= 'question: ', help="prefix to b
 argParser.add_argument("-b","--batch_size", type=int,default= 64, help="size of batch")
 argParser.add_argument("-m","--model_name", help="name of model for tokenizer and model training")
 argParser.add_argument("-ht","--head_type", type=str, help="type of head to be added on top of t5 model options: lm, reg, all")
-argParser.add_argument("-lr","--learning_rate", type=float, default= 0.001, help="learning rate for optim")
+argParser.add_argument("-lr_step","--lr_decay_step", type=int, default= 100, help="step size for decaying learning rate using step schedular")
 argParser.add_argument('-c',"--clip_value", type=int, default= 1, help= "gradient clip value")
 argParser.add_argument("-e","--epochs_number", type=int, default=100, help="number of training epochs")
 argParser.add_argument("-d","--dropout_rate", type=float, default=0.5, help="dropout rate for model training")
@@ -67,7 +67,7 @@ argParser.add_argument("-exp","--num_exp",type=int, default=5, help = 'number of
 argParser.add_argument("-Vem","--value_embed", type= bool, default= True ,help='to value embed or not')
 argParser.add_argument("-voc","--vocab_file", default= 'spiece.model' ,help='to value embed or not')
 argParser.add_argument("-s","--seed",type= int, default= 20 ,help='seed for reproducability')
-argParser.add_argument("-wd","--weight_decay_coeff",type= float, default= 0.02 ,help='coefficient for weight decay of optimizer')
+argParser.add_argument("-wd","--weight_decay_coeff",type= float, default= 0.01 ,help='coefficient for weight decay of optimizer')
 
 args = argParser.parse_args()
 
@@ -75,6 +75,7 @@ args = argParser.parse_args()
 hyperparams = {
     'seed': args.seed,
     'lr': args.learning_rate,
+    'lr_decay_step': args.lr_decay_step,
     'clip_value': args.clip_value,
     'dropout_rate' : args.dropout_rate,
     'weight_decay_co':args.weight_decay_coeff,
@@ -118,9 +119,3 @@ elif args.predict:
 #     # print(out.loss)
 #     break;
 
-
-# For train
-#!python /content/drive/MyDrive/Thesis/EXPeriment_2/New_code/main.py  -m google/t5-small-lm-adapt -ht lm -on smart_vanilla -tf /content/drive/MyDrive/Thesis/EXPeriment_2/New_code/task1_train.json -df /content/drive/MyDrive/Thesis/EXPeriment_2/New_code/task1_dev.json --train
-
-# For Inference
-#!python /content/drive/MyDrive/Thesis/EXPeriment_2/New_code/main.py -omp /content/drive/MyDrive/Thesis/EXPeriment_2/New_code/smart_vanilla -tsf /content/drive/MyDrive/Thesis/EXPeriment_2/New_code/task1_test.json -ht lm
