@@ -16,9 +16,7 @@ from Inference import make_prediction
 
 import wandb  
 import os
-os.environ["WANDB_API_KEY"]="53f31c6742a692365d1efe5d618d1ca8629219bc"
-os.environ["WANDB_ENTITY"]="zena-k"
-os.environ["WANDB_PROJECT"]="Smart"
+
 
 # Device
 gpu_device = torch.device("cuda")
@@ -95,7 +93,7 @@ class Trainer():
 
             elif model.head == 'all':
                 questions, atten, quest_num_values, ques_num_masks, answers = batch
-                
+
                 # forward pass 
                 reg_out, lm_out = model(questions, answers, attens=atten,
                             num_values=quest_num_values, num_masks=ques_num_masks)
