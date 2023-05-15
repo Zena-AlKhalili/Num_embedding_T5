@@ -65,13 +65,13 @@ class T5NumericalEmbeddings(nn.Module):
             return embeddings
             
         if self.is_value_embed:
-            tok_mask = (~numeric_masks.to(torch.bool)).to(torch.long)
+            # tok_mask = (~numeric_masks.to(torch.bool)).to(torch.long)
             numeric_values = numeric_values.unsqueeze(-1)
             value_embeddings = F.relu(self.dropout(self.input_layer(numeric_values)))
             # value_embeddings = F.relu(self.dropout(self.first_hidden(value_embeddings)))
             value_embeddings = F.relu(self.hidden_layer(value_embeddings))
             value_embeddings = torch.einsum('bse,bs->bse', value_embeddings,numeric_masks)
-            word_embeddings = torch.einsum('bse,bs->bse', word_embeddings,tok_mask)
+            # word_embeddings = torch.einsum('bse,bs->bse', word_embeddings,tok_mask)
             embeddings = word_embeddings + value_embeddings
             return embeddings
         
@@ -130,8 +130,8 @@ class NumT5(nn.Module):
                 output = self.regressor(out.last_hidden_state)
                 return output
             elif self.head == 'all':
-                ans_embeds = self.numerical_embedder(ans_ids,ans_num_values,ans_num_masks)
-                lm_out = self.model(inputs_embeds=quest_embeds, decoder_inputs_embeds=ans_embeds,
+                # ans_embeds = self.numerical_embedder(ans_ids,ans_num_values,ans_num_masks)
+                lm_out = self.model(inputs_embeds=quest_embeds, #decoder_inputs_embeds=ans_embeds,
                                     labels=ans_ids, output_hidden_states=True)
                 reg_out = self.regressor(lm_out.decoder_hidden_states[-1])
                 return reg_out, lm_out
