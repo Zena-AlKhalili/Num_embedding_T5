@@ -11,9 +11,16 @@ import utils
 
 
 class vanilla_dataset(Dataset):
-    def __init__(self,data_file,prefix):
-        self.dataframe = pd.read_json(data_file)
+    def __init__(self,data_file,prefix, NoNegative='no'):
+        self.dataframe = pd.read_json(data_file) #,dtype=False # prevent pd to infer types on its own when reading. to keep answers as str instead of converting them to float
+        # keep only numeric answers
         self.dataframe = self.dataframe[self.dataframe['answer'].map(lambda x: utils.is_num(x)== True)]
+        # keep only answers > 0
+        if NoNegative == 'yes':
+            self.dataframe = self.dataframe[self.dataframe['answer'].map(lambda x: x > 0)]
+        # convert to str
+        self.dataframe['answer'] = self.dataframe['answer'].map(lambda x: str(x))
+        # add prefix
         self.dataframe['question'] = self.dataframe['question'].map(lambda x: prefix+x)
 
     def __len__(self):

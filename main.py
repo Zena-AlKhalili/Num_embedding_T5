@@ -88,6 +88,7 @@ argParser.add_argument("-PredT","--pred_type", default= 'reg' ,help='To get the 
 # argParser.add_argument("-metric","--saving_metric", default= 'MAE' ,help='What metric to use to save best model. options: MAE , EM')
 argParser.add_argument("--bulk_predict",action = 'store_true', help ='predict output of several models, given folder of models, data files and hyperparams')
 argParser.add_argument("-mdir","--models_directory", help ='directory of models for bulk prediction')
+argParser.add_argument("-noNeg","--NoNegative", default='yes', help ='to wrap regressor with ReLu to inforce positive predictions only. options: yes, no')
 
 args = argParser.parse_args()
 
@@ -116,7 +117,8 @@ hyperparams = {
     'vocab_file': args.vocab_file,
     'loss': args.loss_function,
     # 'saving_metric':args.saving_metric,
-    'pred_type': args.pred_type
+    'pred_type': args.pred_type,
+    'NoNegative': args.NoNegative
 }
 
 # fix seed for reproduceability

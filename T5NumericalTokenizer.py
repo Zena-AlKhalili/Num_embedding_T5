@@ -297,21 +297,13 @@ class T5NumericalTokenizer(PreTrainedTokenizer):
         if not text:
             return []
         for token in text.split() :  
-            token = re.split('(\d+)', token)
-            if len(token) > 1:
-                token = token[1]
+            numbers = re.findall("[-+]?[.]?[\d]+(?:,\d\d\d)*[\.]?\d*(?:[eE][-+]?\d+)?", token)
+            if len(numbers)>0:
+                is_number = True
+                numeric_value = float(re.sub(',','',numbers[0]))
             else:
-                token = token[0]
-            try:
-                if token not in ['infinity', 'inf', 'nan']:
-                    numeric_value = float(token)
-                    is_number = True
-                else:
-                    is_number = False
-            except:
-                ValueError
                 is_number = False
-
+                
             if is_number:
                 output_tokens.append('<unk>') ## not sure !!! ******
                 numeric_values.append(numeric_value)

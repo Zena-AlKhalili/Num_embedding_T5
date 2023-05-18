@@ -86,18 +86,24 @@ class T5NumericalEmbeddings(nn.Module):
             return embeddings
         
 class Num_regressor(nn.Module):
-    def __init__(self,d_model,value_hidden_d,dropout_rate):
+    def __init__(self,d_model,value_hidden_d,dropout_rate,NoNegative='no'):
         super().__init__()
         self.in_layer = nn.Linear(d_model,value_hidden_d*2)
         self.first_hid = nn.Linear(value_hidden_d*2,value_hidden_d)
         self.hid_layer = nn.Linear(value_hidden_d,1)
         self.dropout = nn.Dropout(p=dropout_rate)
+        self.NoNegative = NoNegative
+        self.eps = 0.001
         
     def forward(self,last_hidden_state):
         out = F.relu(self.dropout(self.in_layer(last_hidden_state)))
         out = F.relu(self.dropout(self.first_hid(out)))
-        out_value = self.hid_layer(out)
-        return out_value
+        if self.NoNegative == 'yes':
+            out_value = F.relu(self.hid_layer(out)) ## ReLU not to generate negative values and use LogL1
+            return out_value + self.eps
+        else:
+            out_value = self.hid_layer(out)  
+            return out_value 
 
 
 class NumT5(nn.Module): 
@@ -112,7 +118,7 @@ class NumT5(nn.Module):
             self.regressor = Num_regressor(self.model.config.d_model,hyperparams['hidden_value_layer'],hyperparams['dropout_rate'])
         elif self.head == 'all':
             self.model = transformers.T5ForConditionalGeneration.from_pretrained(self.model_name)
-            self.regressor = Num_regressor(self.model.config.d_model,hyperparams['hidden_value_layer'],hyperparams['dropout_rate'])
+            self.regressor = Num_regressor(self.model.config.d_model,hyperparams['hidden_value_layer'],hyperparams['dropout_rate'],hyperparams['NoNegative'])
         else:
             self.model = transformers.T5ForConditionalGeneration.from_pretrained(self.model_name)
         if self.is_embed:

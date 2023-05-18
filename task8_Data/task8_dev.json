@@ -1,0 +1,506 @@
+[
+    {
+        "question": "Isabella\u2019s hair is 18.0 inches long. If she cuts off 4.0 inches, how long will it be.",
+        "answer": "14"
+    },
+    {
+        "question": "Albert has 15.0 boxes of cabbages. He wants to divide these by 12.0 people. How many boxes does each person get.",
+        "answer": "1.25"
+    },
+    {
+        "question": "A restaurant served 9.0 hot dogs in total today and 2.0 during dinner today. It served 5.0 of them yesterday . How many hot dogs were served at lunch today.",
+        "answer": "7"
+    },
+    {
+        "question": "Cindy\u2019s mom baked 41.0 cookies. Paul\u2019s dad ate 38.0. How many cookies are left.",
+        "answer": "3"
+    },
+    {
+        "question": "The Lakers scored 43 points on a combination of 20 two point baskets and three point baskets. How many shots of three point baskets were made?",
+        "answer": "3"
+    },
+    {
+        "question": "Mrs. Hilt bought a notebook for $1.30. She paid with nickels. How many nickels did she use to buy the notebook?",
+        "answer": "26"
+    },
+    {
+        "question": "A movie theater charges 7.50 dollars for adults and 4.50 dollars for children. The receipts for a showing of a movie were 540 dollars. If 80 tickets were sold , find how many adult tickets were sold.",
+        "answer": "60"
+    },
+    {
+        "question": "The sum of two numbers is 18. If twice the smaller number is 6 more than the larger , find the smaller number and the larger number.",
+        "answer": "8"
+    },
+    {
+        "question": "Marc sold 563 tickets for the school play. Student tickets cost 4 dollars and adult tickets cost 6 dollars. Marc 's sales totaled 2840 dollars. How many adult tickets  did Marc sell?",
+        "answer": "294"
+    },
+    {
+        "question": "Mike has 45.0 5.0 dollar bills. How many dollars does he have .",
+        "answer": "225"
+    },
+    {
+        "question": "George has 6.0 blocks. Each box holds 2.0 blocks. and there are 5.0 boxes in a case. How many boxes does George have.",
+        "answer": "3"
+    },
+    {
+        "question": "Peter starts with 8.0 erasers. Bridget takes 3.0. How many erasers does Peter end with.",
+        "answer": "5"
+    },
+    {
+        "question": "A large bag of balls was kept under Haley\u2019s bed. Her mom placed the balls in bags for children in foster homes. If every bag can contain 4.0 balls, and Haley has 36.0 balls, how many bags will be used.",
+        "answer": "9"
+    },
+    {
+        "question": "Melissa has 88.0 bananas. Joshua shares 4.0 more with Melissa. How many bananas will Melissa have.",
+        "answer": "92"
+    },
+    {
+        "question": "Find the smaller number whose sum is 147 and one is 4 greather than 0.375 of the other.",
+        "answer": "43"
+    },
+    {
+        "question": "1 number is 9 less than twice another , and their sum is 42. Find the larger number.",
+        "answer": "25"
+    },
+    {
+        "question": "1 out of 2 numbers is thrice the other. If their sum is 124 , find the larger numbers.",
+        "answer": "93"
+    },
+    {
+        "question": "Joan has saved 6 quarters from washing cars. How many cents does Joan have ?",
+        "answer": "150"
+    },
+    {
+        "question": "One integer is twice another , and their sum is 96. Find the larger integer.",
+        "answer": "64"
+    },
+    {
+        "question": "Melanie, Benny, Sally, and Jessica each have 3 baseball cards. How many baseball cards do they have in all ?",
+        "answer": "12"
+    },
+    {
+        "question": "The value of a sport utility vehicle this year is 16,000 dollars , which is 0.8 of what its value was last year. Find the value of the vehicle last year.",
+        "answer": "20000"
+    },
+    {
+        "question": "Suppose you invested 10,000 dollars , part at 6 % annual interest and the rest at 9 % annual interest. If you received 684 dollars in interest after one year , how much did you invest at 6 % annual interest?",
+        "answer": "7200"
+    },
+    {
+        "question": "Iesha has 58.0 books and borrows 19.0. How many books does Iesha have.",
+        "answer": "77"
+    },
+    {
+        "question": "Mrs. Hilt spent 74 cents at the school store. She bought a notebook for 35 cents, a ruler for 18 cents, and 3 pencils. What is the cost of one pencil?",
+        "answer": "7"
+    },
+    {
+        "question": "James had 39.0 stickers. He got 61.0 more stickers for his birthday. How many stickers did James have in all.",
+        "answer": "100"
+    },
+    {
+        "question": "The Lakers scored a total of 80 points in a basketball game against the Bulls. The Lakers made a total of 37 baskets , consisting of 2 point baskets and 3 point baskets. How many 3 point baskets did the Lakers make?",
+        "answer": "6"
+    },
+    {
+        "question": "Find a number such that 1 more than 0.6667 the number is 0.75 the number.",
+        "answer": "12"
+    },
+    {
+        "question": "Sean has 45.0 whistles.  Charles has 32.0 whistles. How many whistles do they have together.",
+        "answer": "77"
+    },
+    {
+        "question": "The sum of 5 and a number is 20. Find the number.",
+        "answer": "15"
+    },
+    {
+        "question": "The Willey Farm Collective , farmed by several branches of the Willeys , has 4500 acres of land available for raising corn and wheat. The cost of raising corn is 42 dollars an acre , while the cost of wheat is 35 dollars an acre. The Collective 's available capital is 165,200 dollars. How many acres of corn should the Collective plant?",
+        "answer": "1100"
+    },
+    {
+        "question": "Adam bought 9 packages of cat food that contained 10 cans each. In addition he bought 7 packages of dog food with 5 cans each inside. How many cans of pet food does he have in all.",
+        "answer": "125"
+    },
+    {
+        "question": "Nine books are to be bought by a student. Some cost 6 dollars each and the remainder cost 6.50 dollars each. The total amount spent was 56 dollars. How many 6.50-dollar books were sold?",
+        "answer": "4"
+    },
+    {
+        "question": "Two cyclists start at the same point and travel in opposite directions. One cyclist travels 8 kilometers per hour faster than the other. If the two cyclists are 270 kilometers apart after 5 hours what is the rate of the slower cyclist?",
+        "answer": "23"
+    },
+    {
+        "question": "An airplane begins a flight with a total of 36.0 gallons of fuel stored in two separate wing tanks. During the flight , 25.0 % of the fuel in one tank is used , and in the other tank , 37.5 % of the fuel is used. If the total fuel used is 11.2 gallons , what are the amounts x  stored in each tank.",
+        "answer": "18.4"
+    },
+    {
+        "question": "A carpenter bought a piece of wood that was 0.41 meters long . Then she sawed 0.33 meters off the end . How long is the piece of wood now .",
+        "answer": "0.08"
+    },
+    {
+        "question": "Keith grew 29 cantelopes, Fred grew 16 cantelopes, and Jason grew  20 cantelopes. How many cantelopes did they grow in total ?",
+        "answer": "65"
+    },
+    {
+        "question": "Jane starts with 87.0 crayons. Jane is given another 7.0 crayons. How many crayons does Jane end with.",
+        "answer": "94"
+    },
+    {
+        "question": "If 4 apples and 2 oranges equals 1 dollars and 2 apples and 3 orange equals 0.70 dollars , how much does each apple cost?",
+        "answer": "0.2"
+    },
+    {
+        "question": "In a given week , the first car gets an average of 30 miles per gallon , and the second car gets 25 miles per gallon. The two cars combined drive a total of 1700 miles in that week , for a total gas consumption of 60 gallons. How many gallons were consumed by the first car that week?",
+        "answer": "40"
+    },
+    {
+        "question": "Joshua sold 7 bottle caps. He previously had 40. How many does he now have.",
+        "answer": "33"
+    },
+    {
+        "question": "Kerry asked a bank teller to cash a 390 dollars check using 20-dollar bills and 50-dollar bills. If the teller gave her a total of 15 bills , how many 20-dollar bills did she get?",
+        "answer": "12"
+    },
+    {
+        "question": "Justin buys 61.0 paper plates for a birthday party. He already has 26.0 blue plates and 7.0 red plates. How many  plates does Justin have all together.",
+        "answer": "94"
+    },
+    {
+        "question": "The difference between two numbers is 9. Find the larger , if their sum is 46.",
+        "answer": "27.5"
+    },
+    {
+        "question": "The sum of two numbers is 52 , and their difference is 6. What is  the larger number?",
+        "answer": "29"
+    },
+    {
+        "question": "Keith bought 72 eggs from the store to bake some cakes. How many dozen eggs did Keith buy?",
+        "answer": "6"
+    },
+    {
+        "question": "An amusement park sells 2 kinds of tickets.  Tickets for children cost 1.50 dollars.  Adult tickets cost 4 dollars.  On a certain day , 278 people entered the park.  On that same day the admission fees collected totaled 792 dollars. How many children were admitted on that day?",
+        "answer": "128"
+    },
+    {
+        "question": "Student tickets cost 4 dollars and general admission tickets cost 6 dollars. You sell 525 tickets and collect 2876 dollars. How many student tickets did you sell?",
+        "answer": "137"
+    },
+    {
+        "question": "If 4 apples and 2 oranges equals 1 dollars and 2 apples and 3 orange equals 0.70 dollars , how much does each orange cost?",
+        "answer": "0.1"
+    },
+    {
+        "question": "The Drama Club sold 1,500 tickets for the end-of-year-performance. Admission prices were 12 dollars for adults and 6 dollars for students. The total amount collected at the box office was 16,200 dollars. How many students attended the play? How many adult attended the play?",
+        "answer": "300"
+    },
+    {
+        "question": "Marilyn has 8.0 boxes. Daniel comes to help and brings 10.0 cookies to share with Marilyn. If each box can store 40.0 bananas, how many bananas can be stored in total in the boxes.",
+        "answer": "320"
+    },
+    {
+        "question": "At a movie theater , tickets cost 9.50 dollars for adults and 6.50 dollars for children. A group of 7 moviegoers pays a total of 54.50 dollars. How many children were in the group?",
+        "answer": "4"
+    },
+    {
+        "question": "A truck and trailer together weigh 7,000 pounds. The trailer weighs 200 pounds less than 0.5 as much as the truck. Find the trailer 's weight.",
+        "answer": "2200"
+    },
+    {
+        "question": "Wal-Mart sells thermometers for 2 dollars and hot-water bottles for 6 dollars . In December , Wal-Mart 's total sales for these two items was 1200 dollars. Customers bought 7 times as many thermometers as hot-water bottles. How many hot-water bottles did Wal-Mart sell??",
+        "answer": "60"
+    },
+    {
+        "question": "Nancy went to 9.0 football games this month . She went to 8.0 games last month. She paid 3.0 dollars each for the tickets to 7.0 games. How many games did she not have to pay for.",
+        "answer": "10"
+    },
+    {
+        "question": "The sum of 2 numbers is 70. The second is 10 more than 3 times the first. Find the larger number.",
+        "answer": "55"
+    },
+    {
+        "question": "Find the number whose double is 45 greater than its half?",
+        "answer": "30"
+    },
+    {
+        "question": "Tickets for a concert were priced at 7 dollars for students and 10 dollars for non-students. There were 2000 tickets sold for a total of 17,339 dollars. How many student tickets were sold?",
+        "answer": "887"
+    },
+    {
+        "question": "One number is 3 more than twice a second number. Their sum is 27. Find the smaller number.",
+        "answer": "8"
+    },
+    {
+        "question": "Lana picked 36.0 tulips and 37.0 roses and 70.0 other flowers to make flower bouquets. How many flowers did Lana pick to use in the bouquets.",
+        "answer": "143"
+    },
+    {
+        "question": "A florist had 37.0 roses. If she picked 16.0 more and then later picked another 19.0 more, how many roses would she have.",
+        "answer": "72"
+    },
+    {
+        "question": "It takes 7.0 minutes to bake 4.0 pans of cookies. How long will it take to bake 1.0 pan of cookies.",
+        "answer": "1.75"
+    },
+    {
+        "question": "Willie has 48.0 bananas. Charles has 35.0 bananas. He eats 14.0. How many bananas did they originally have together.",
+        "answer": "83"
+    },
+    {
+        "question": "Randy needs 53 cupcakes for a birthday party. He already has 7 chocolate cupcakes and 19 vanilla cupcakes. How many more cupcakes should Randy buy?",
+        "answer": "32"
+    },
+    {
+        "question": "Tickets at a local theater cost 6 dollars for adults and 2 dollars dollars for kids under twelve. If 175 tickets were sold and the profit was 750 dollars , how many kid tickets were sold?",
+        "answer": "75"
+    },
+    {
+        "question": "Warren has 252.0 tables. Each table will hold 4.0 guests. How many guests will there be.",
+        "answer": "1008"
+    },
+    {
+        "question": "Tickets to a movie were sold at 4.00 dollars per adult and 2.50 dollars per student. If 240 tickets were sold for a total of 765.00 dollars , how many student tickets were sold?",
+        "answer": "130"
+    },
+    {
+        "question": "Hockey teams receive 2 points for a win and 1 point for a tie. The wild cats once won a championship with 60 points. They won 9 more games than they tied. How many ties did the Wildcats have?",
+        "answer": "14"
+    },
+    {
+        "question": "On a canoe trip , Rita paddled upstream at an average speed of 2 miles per hour relative to the riverbank. On the return trip downstream, her average speed was 3 miles per hour. Find the speed of the river 's current.",
+        "answer": "2.5"
+    },
+    {
+        "question": "Sara grew 43 pumpkins, but the rabbits ate 23 pumpkins. How many pumpkins does Sara have left ?",
+        "answer": "20"
+    },
+    {
+        "question": "In a test of 30 questions , 20 points are given for each correct answer and 5 points are deducted for each one answered incorrectly. If Maria answered all of the questions and got a score of 325 , how many did she get correct?",
+        "answer": "19"
+    },
+    {
+        "question": "Adult tickets for a play cost 11 dollars and the child tickets cost 10 dollars. If there were 23 people at a performance and the theater collected 246 dollars from tickets sales , How many adults attended the play?",
+        "answer": "16"
+    },
+    {
+        "question": "Your science test is worth 100 points and contains 38 questions. There are two-point and five-point questions on the test. How many five-point questions are on the test?",
+        "answer": "8"
+    },
+    {
+        "question": "Six apples and three oranges cost 1.77 dollars. Two apples and five oranges cost 1.27 dollars. Find the cost of an orange.",
+        "answer": "0.17"
+    },
+    {
+        "question": "I have 4.0 pencil boxes. If I fill each box with 648.0 pencils, how many pencils will I have.",
+        "answer": "2592"
+    },
+    {
+        "question": "Mary picked 122 oranges and Jason picked 105 oranges from the orange tree. How many oranges were picked in total ?",
+        "answer": "227"
+    },
+    {
+        "question": "Find smaller number of the two numbers whose sum is 14 if one number is 3 times as large as the other number.",
+        "answer": "3.5"
+    },
+    {
+        "question": "The sum of 2 numbers is 138. If three times the smaller number is subtracted from the larger number , the result is 22. Find the smaller number.",
+        "answer": "29"
+    },
+    {
+        "question": "A restaurant made 9.0 hamburgers and 4.0 hot dogs to serve during lunch . Then the restaurant made 3.0 more hamburgers . How many hamburgers were made .",
+        "answer": "12"
+    },
+    {
+        "question": "A pet store has 6.0 bird cages. If the pet store has 6.0 parrots and 2.0 parakeets, how many birds can occupy 1.0 cage on average .",
+        "answer": "1.333333333"
+    },
+    {
+        "question": "There are 397.0 black dots on the butterflies. There are 12.0 butterflies. How many black dots are on each butterfly.",
+        "answer": "33.08333333"
+    },
+    {
+        "question": "Mario has 5000 pence to invest and decides to invest part of it at 4 % and the rest of it at 6.5 %. If the total interest for the year is  245 pence, how much does Mario has to invest at 4 % rate ?",
+        "answer": "3200"
+    },
+    {
+        "question": "To make 10 kilograms of aluminum alloy with 60 % aluminum , a scientist wants to use 2 metals with 45 % and 70 % aluminum content respectively. How many kilograms of 70 % aluminum should she mix?",
+        "answer": "6"
+    },
+    {
+        "question": "Lakota bought 6 new compact disks and 2 used compact disks for 127.92 dollars. At the same prices , Mackenzie bought 3 new compact disks and 8 used compact disks for 133.89 dollars. Find the cost of buying a single used compact disk.",
+        "answer": "9.99"
+    },
+    {
+        "question": "Carla has some marbles. She bought 134.0 marbles. She had 187.0 marbles before. How many does she have now.",
+        "answer": "321"
+    },
+    {
+        "question": "Tom found 5 seashells on the beach. he gave Jessica 2 of the seashells. How many seashells does he now have ?",
+        "answer": "3"
+    },
+    {
+        "question": "Sara had 100.0 pennies and 783.0 quarters in her bank . Her dad gave 271.0 quarters to Sara . How many quarters does she have now .",
+        "answer": "1054"
+    },
+    {
+        "question": "A washer-dryer combination costs 1,200 dollars. If the washer costs 220 dollars more than the dryer , what does the washer cost?",
+        "answer": "710"
+    },
+    {
+        "question": "Jane had been saving large empty cans to serve as pots for sunflowers. If she has 54.0 sunflower seeds, and there are 9.0 cans, how many seeds will be placed in each can if she places an equal number of seeds in each can.",
+        "answer": "6"
+    },
+    {
+        "question": "A 177-inch pipe is cut into two pieces. One piece is two times the length of the other. Find the lengths of the shorter pieces.",
+        "answer": "59"
+    },
+    {
+        "question": "Purses cost 7 dollars each. Scarves cost 8 dollars each. 17 combined items sold costing 130 dollars total. How many purses were sold?",
+        "answer": "6"
+    },
+    {
+        "question": "One number is 3 less than twice another. If their sum is 39 , find the smaller number",
+        "answer": "14"
+    },
+    {
+        "question": "There was 698.0 children taking a test. 105.0 passed. How many had to sit it again.",
+        "answer": "593"
+    },
+    {
+        "question": "In a family there are two cars. The sum of the average miles per gallon obtained by the two cars in a particular week is 75 miles per gallon. The first car has consumed 25 gallons during that week , and the second has consumed 35 gallons , for a total of 2275 miles driven by the two cars combined. What was the average gas mileage obtained by the second car that week?",
+        "answer": "5.5"
+    },
+    {
+        "question": "On Wednesday, Joan spent 4 half-dollars playing pinball. The next day, she spent 14 half-dollars on pinball. What was the total amount Joan spent playing pinball?",
+        "answer": "9"
+    },
+    {
+        "question": "Ilida went to Minewaska Sate Park one day this summer. All of the people at the park were either hiking or bike riding. There were 178 more hikers than bike riders. If there were a total of 676 people at the park , how many were hiking?",
+        "answer": "427"
+    },
+    {
+        "question": "A group of science students went on a field trip. They took 6.0 vans and 8.0 buses. There were 6.0 people in each van and 18.0 people in each bus. How many more people went on the field trip in buses than those travelling by van.",
+        "answer": "108"
+    },
+    {
+        "question": "A store had 40.0 coloring books in stock. They ended up putting them on sale and getting rid of 20.0 of them. The put coupons in the ones they still had with 4.0 coupons in each book. How many coupons did they use.",
+        "answer": "80"
+    },
+    {
+        "question": "There were 9 people in line for bumper cars. If 6 people got tired of waiting and left, but 3 more people got int line, how many people were in line at some point .",
+        "answer": "18"
+    },
+    {
+        "question": "There were 22.0 kids playing soccer. If 14.0 decided to go home, how many would be left playing.",
+        "answer": "8"
+    },
+    {
+        "question": "Isabel had 72.0 homework problems. She finished 32.0 of them. If each problem has 5 sub tasks, how many sub tasks she has to solve.",
+        "answer": "200"
+    },
+    {
+        "question": "Gumballs come in packages of 5.0. Nathan ate 20.0 packages. How many gumballs did he eat .",
+        "answer": "100"
+    },
+    {
+        "question": "Zach wants to ride on the Ferris wheel and the roller coaster. The Ferris wheel costs 2.0 tickets, the roller coaster costs 7.0 tickets, and there is a discount of 1.0 ticket for going on multiple rides. Zach also has a newspaper coupon for a free 1.0  ticket. How many tickets did Zach need to buy to go on both rides.",
+        "answer": "7"
+    },
+    {
+        "question": "Gary had 73.0 dollars. He sold his pet snake for 55.0 dollars. How many dollars does Gary have now.",
+        "answer": "128"
+    },
+    {
+        "question": "During the 1998-1999 Little League season , the Tigers played 57 games. They lost 21 more games than they won. They did n't tie any. How many games did they win that season?",
+        "answer": "18"
+    },
+    {
+        "question": "The Johnson Farm has 500 acres of land allotted for cultivating corn and wheat. The cost of cultivating corn and wheat is 42 dollars for corn and 30 dollars for wheat. Mr.Johnson has 18,600 dollars available for cultivating these crops. If he used all the land and entire budget , how many acres of corn should he plant?",
+        "answer": "300"
+    },
+    {
+        "question": "A chemist needs to make 30 ounces of a 25 % alcohol solution by mixing together a 15 % alcohol solution with a 40 % alcohol solution. How many ounces of the 40 % solution?",
+        "answer": "12"
+    },
+    {
+        "question": "A plane travels due East at 325 miles per hour and another plane travels due west at 275 miles per hour. If they leave at the same time , and from the same place , in how many hours will they be 2100 miles apart?",
+        "answer": "3.5"
+    },
+    {
+        "question": "X pounds of candy valued at 3.50 dollars per pound is mixed with Y pounds of candy valued at 4.30 dollars per pound to produce 10 pounds of a mixture selling for 4 dollars per pound. Find X",
+        "answer": "3.75"
+    },
+    {
+        "question": "How many slice of pie are served today, if 7 are sold in total of which 5 were sold yesterday.",
+        "answer": "2"
+    },
+    {
+        "question": "In 1 week , a music store sold 7 violins for a total of 1600 dollars. 2 different types were sold. One cost 200 dollars and the other cost 300 dollars. How many 200-dollar violins were sold?",
+        "answer": "5"
+    },
+    {
+        "question": "A new parking lot has spaces for 450 cars. The ratio of spaces for full sized cars to compact cars is 11 to 4. How many spaces are for compact cars?",
+        "answer": "120"
+    },
+    {
+        "question": "The second of two numbers is 4 more than the first. The sum is 56. Find the second numbers.",
+        "answer": "30"
+    },
+    {
+        "question": "A concert sells out a 20,000 seat arena. Main seat tickets cost 55 dollars , and back seat tickets for 45 dollars. The concert made 955,000 dollars. How many main seat tickets were sold?",
+        "answer": "5500"
+    },
+    {
+        "question": "A pet store had 13.0 siamese cats and 5.0 house cats. During a purchase, they added 10.0 cats. How many cats do they have left.",
+        "answer": "28"
+    },
+    {
+        "question": "The ferris wheel in paradise park has 6.0 seats. 14.0 people want to ride the ferris wheel. How many times does the ferris wheel have to run for everyone to get a turn.",
+        "answer": "2.333333333"
+    },
+    {
+        "question": "Ned bought 14.0 boxes of chocolate candy and gave 7.0 to his little brother. If each box has 6.0 pieces inside it, how many pieces did Ned still have.",
+        "answer": "42"
+    },
+    {
+        "question": "Mary earns $46.0 cleaning a home. How many dollars did she earn, if she cleaned 276.0 homes.",
+        "answer": "12696"
+    },
+    {
+        "question": "If the product of 5 and a number is increased by 4 , the result is 19. What is the number?",
+        "answer": "3"
+    },
+    {
+        "question": "Tickets for a concert were priced at 9 dollars for students and 11 dollars for non-students. There were 2,000 tickets sold for a total of 20,960 dollars. How many student ticket were sold?",
+        "answer": "520"
+    },
+    {
+        "question": "Carla has some marbles. Carla bought 489.0 marbles. Now Calra has 2778.0 marbles all together. How many did Carla start with.",
+        "answer": "2289"
+    },
+    {
+        "question": "A woman has 450 dollars invested , part at 2 % and the remainder at 3 % simple interest. If the total annual income is 11 dollars , how much is invested at 2 % , in dollars?",
+        "answer": "250"
+    },
+    {
+        "question": "Dan has 32.0 green and 38.0 violet marbles . Mike took 23.0 of Dan 's green marbles . Now , Dan has ____ green marbles .",
+        "answer": "9"
+    },
+    {
+        "question": "An art dealer sold 16 etchings for 630 dollars. He sold some of them at 35 dollars each and the rest at 45 dollars each. How many etchings did he sell at 35 dollars?",
+        "answer": "9"
+    },
+    {
+        "question": "There are 54 scissors in the drawer. Keith placed 22 more  scissors in the drawer. How many scissors are now there in all ?",
+        "answer": "76"
+    },
+    {
+        "question": "For a special event at the TCR spring fest , the cost of 3 adult tickets and 4 student tickets was 84 dollars and the cost of 4 adult tickets and 2 student tickets was 62 dollars. Find the admission price for a student ticket at the spring fest , in dollars.",
+        "answer": "15"
+    },
+    {
+        "question": "There are 115 pencils in the drawer. Sara placed 100 more  pencils in the drawer. How many pencils are now there in all ?",
+        "answer": "215"
+    }
+]

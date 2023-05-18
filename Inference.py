@@ -121,14 +121,14 @@ def make_prediction(model,data_examples,tokenizer,num_tokenizer,h_params):
     return y_hat,ground_truth
 
 def Evaluate(model_path,data_path,tokenizer,num_tokenizer,hyperparams):
-    test_set = vanilla_dataset(data_path,hyperparams['prefix'])
+    test_set = vanilla_dataset(data_path,hyperparams['prefix'],hyperparams['NoNegative'])
     fine_tuned =  NumT5(hyperparams['model_name'],hyperparams)
     fine_tuned.to(device)
     fine_tuned.load_state_dict(torch.load(model_path))
     preds,truths = make_prediction(fine_tuned,test_set,tokenizer,num_tokenizer,hyperparams)
     
-    # for i in range(len(preds)):
-    #    print(f"i: {i} | Pred: {preds[i]} | Truth: {truths[i]} ")  
+    for i in range(len(preds)):
+       print(f"i: {i} | Pred: {preds[i]} | Truth: {truths[i]} ")  
          
     mag_f1 = macro_F1_magnitued(preds,truths)
     task_f1 = macro_F1_task(preds,truths)

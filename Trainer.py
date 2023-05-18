@@ -28,8 +28,8 @@ print("Running on", device)
 class Trainer():
     def __init__(self,model_name, train_file, dev_file, hyperparameters):
         self.hyperparams = hyperparameters
-        self.train_set = vanilla_dataset(train_file,self.hyperparams['prefix'])
-        self.dev_set = vanilla_dataset(dev_file,self.hyperparams['prefix'])
+        self.train_set = vanilla_dataset(train_file,self.hyperparams['prefix'],hyperparameters['NoNegative'])
+        self.dev_set = vanilla_dataset(dev_file,self.hyperparams['prefix'],hyperparameters['NoNegative'])
         self.t5_model = NumT5(model_name,self.hyperparams)
         self.optim = torch.optim.AdamW(self.t5_model.parameters(), lr=self.hyperparams['lr']
                                        ,weight_decay=self.hyperparams['weight_decay_co'])
@@ -93,7 +93,7 @@ class Trainer():
 
             elif model.head == 'all':
                 questions, atten, quest_num_values, ques_num_masks, answers = batch
-
+                
                 # forward pass 
                 reg_out, lm_out = model(questions, answers, attens=atten,
                             num_values=quest_num_values, num_masks=ques_num_masks)
